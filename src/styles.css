@@ -1,0 +1,12 @@
+[data-mantine-color-scheme="dark"] .mantine-CodeHighlight-root {
+  background-color: var(--mantine-color-dark-7) !important;
+}
+
+[data-mantine-color-scheme="dark"] .mantine-CodeHighlight-pre,
+[data-mantine-color-scheme="dark"] .mantine-CodeHighlight-code {
+  background-color: var(--mantine-color-dark-7) !important;
+}
+
+[data-mantine-color-scheme="dark"] .mantine-CodeHighlight-scrollarea {
+  background-color: var(--mantine-color-dark-7) !important;
+}
