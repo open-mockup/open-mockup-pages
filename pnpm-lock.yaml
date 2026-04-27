@@ -21,17 +21,17 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0(monaco-editor@0.52.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@open-mockup/dsl':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.4
+        version: 0.1.4
       '@open-mockup/flow':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.4
+        version: 0.1.4
       '@open-mockup/renderer-core':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.4
+        version: 0.1.4
       '@open-mockup/renderer-mantine':
-        specifier: ^0.1.1
-        version: 0.1.1(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: ^0.1.4
+        version: 0.1.4(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.41.1(react@18.3.1)
@@ -361,17 +361,17 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@open-mockup/dsl@0.1.1':
-    resolution: {integrity: sha512-AxS+it6Yiyv53Ig8IfZE614BVBKOb5f0ZOYpZg3nJw3w9wcZcfyen0W7qNs61VXm8XzxVw/KF30pijlmlnDUGg==}
+  '@open-mockup/dsl@0.1.4':
+    resolution: {integrity: sha512-k+6gtneSNaxRsx96FUf0Q73X1mmsZiRkb5U+I69ZpOaAzCSam0KvfyiIQps6jgTs9oTzrnZ2guyrEMhA4kidYw==}
 
-  '@open-mockup/flow@0.1.1':
-    resolution: {integrity: sha512-sjasUPeCsyAXJOnrjvV2jMdUzeVMjj9gXo4r/0LKEafeZeP9n3djh7+u42XsYYYa/Pnht81vbcmwlC2ht3KKxA==}
+  '@open-mockup/flow@0.1.4':
+    resolution: {integrity: sha512-baYc9nV6Mmt+41QVO+U8KS8ew9IMwmSdiaXvYtJwMSnk/bZ1nW37Nkh34/OVwl9E14iAy+HnYe5ugnshDaExbw==}
 
-  '@open-mockup/renderer-core@0.1.1':
-    resolution: {integrity: sha512-q5tDoRngF/n5R7Pk7lVaSnCQC2V5xxPbIh1uoZ1N1xJwTUzvP7xP5ePTjYxKarchOHOghPTs0VVNvKjERvNzBA==}
+  '@open-mockup/renderer-core@0.1.4':
+    resolution: {integrity: sha512-/+TxhiLje6unVcZfNj+EGoTG75Rl0SbwbADaYJJsZF+2//gPE2/i2nncuIwCHMJ4XxvvawaJMABJEdO3f3LQ/g==}
 
-  '@open-mockup/renderer-mantine@0.1.1':
-    resolution: {integrity: sha512-PrV9Bf7Vanc45prh2TTmp6rQI9wqm/dP1WuJoJzhwcdA6+SpzvqRtxVVOoCtcKo88ln/zbWkX3zB8UdzR0bDAw==}
+  '@open-mockup/renderer-mantine@0.1.4':
+    resolution: {integrity: sha512-8FDB0jzFIjMArPjEQT3ulBWN4E8LMKQsZ50MFMhH8YaQbolNeeCvDpILRLzJ7CrUCwgfWFJWy1nsZvT0EGl0vw==}
     peerDependencies:
       '@mantine/core': '>=7.0.0'
       react: '>=18.0.0'
@@ -1173,21 +1173,21 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@open-mockup/dsl@0.1.1': {}
+  '@open-mockup/dsl@0.1.4': {}
 
-  '@open-mockup/flow@0.1.1':
+  '@open-mockup/flow@0.1.4':
     dependencies:
-      '@open-mockup/dsl': 0.1.1
+      '@open-mockup/dsl': 0.1.4
 
-  '@open-mockup/renderer-core@0.1.1':
+  '@open-mockup/renderer-core@0.1.4':
     dependencies:
-      '@open-mockup/dsl': 0.1.1
+      '@open-mockup/dsl': 0.1.4
 
-  '@open-mockup/renderer-mantine@0.1.1(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@open-mockup/renderer-mantine@0.1.4(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@mantine/core': 7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@open-mockup/dsl': 0.1.1
-      '@open-mockup/renderer-core': 0.1.1
+      '@open-mockup/dsl': 0.1.4
+      '@open-mockup/renderer-core': 0.1.4
       react: 18.3.1
 
   '@rolldown/pluginutils@1.0.0-beta.27': {}

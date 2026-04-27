@@ -72,7 +72,18 @@ export function DemoBlock({ title, doc, code }: DemoBlockProps) {
                   boxSizing: "border-box",
                 }}
               >
-                {renderDsl(doc)}
+                {(() => {
+                  try {
+                    return renderDsl(doc);
+                  } catch (err) {
+                    const msg = err instanceof Error ? err.message : String(err);
+                    return (
+                      <Text size="sm" c="red">
+                        Render error: {msg}
+                      </Text>
+                    );
+                  }
+                })()}
               </Box>
             </Box>
           </Tabs.Panel>

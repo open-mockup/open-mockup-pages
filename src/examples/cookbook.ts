@@ -1032,6 +1032,8 @@ export default dsl({
             fields: [
               field({ key: "language",   component: "select",   label: text("Language"),
                       options: [text("English"), text("Russian"), text("German")] }),
+              field({ key: "timezone",   component: "select",   label: text("Timezone"),
+                      options: [text("UTC"), text("UTC+3"), text("UTC+5")] }),
               field({ key: "darkMode",   component: "switch",   label: text("Dark mode") }),
               field({ key: "newsletter", component: "checkbox", label: text("Subscribe to newsletter") }),
             ],
@@ -1322,23 +1324,94 @@ export default dsl({
     direction: "vertical",
     gap: 0,
     children: [
-      topNav({ brand: text("CRM"), activeKey: "deals", items: [ /* ... */ ] }),
+      topNav({
+        brand: text("CRM"),
+        activeKey: "deals",
+        items: [
+          navItem({ key: "dashboard",  label: text("Dashboard") }),
+          navItem({ key: "deals",      label: text("Deals") }),
+          navItem({ key: "contacts",   label: text("Contacts") }),
+          navItem({ key: "companies",  label: text("Companies") }),
+        ],
+      }),
       split({
         ratio: 0.18,
-        left: sidebarNav({ activeKey: "all", items: [ /* ... */ ] }),
+        left: sidebarNav({
+          activeKey: "all",
+          items: [
+            navItem({ key: "all",      label: text("All deals") }),
+            navItem({ key: "mine",     label: text("My deals") }),
+            navItem({ key: "new",      label: text("New") }),
+            navItem({ key: "progress", label: text("In progress") }),
+            navItem({ key: "won",      label: text("Won") }),
+            navItem({ key: "lost",     label: text("Lost") }),
+          ],
+        }),
         right: split({
           ratio: 0.6,
-          left: stack({ direction: "vertical", gap: 12, children: [
-            section({ title: text("Deals"), content: actionBar([ /* ... */ ]) }),
-            grid({ columns: 3, children: [ /* stats */ ] }),
-            tabs({ tabs: [text("All"), text("This month"), text("At risk")], active: 0 }),
-            table({ dataSource: dataSourceRef("deals"), columns: [ /* ... */ ] }),
-            pagination({ page: 1, pageSize: 20, total: 84 }),
-          ]}),
-          right: stack({ direction: "vertical", gap: 16, children: [
-            card({ title: text("Deal info"), content: stack({ /* ... */ }) }),
-            card({ title: text("Next step"), content: form({ /* ... */ }) }),
-          ]}),
+          left: stack({
+            direction: "vertical",
+            gap: 12,
+            children: [
+              section({
+                title: text("Deals"),
+                content: actionBar([
+                  button({ label: text("Add deal"), variant: "primary",   action: actionRef("addDeal") }),
+                  button({ label: text("Import"),   variant: "secondary", action: actionRef("import") }),
+                ]),
+              }),
+              grid({
+                columns: 3,
+                children: [
+                  stat({ label: text("Open deals"),  value: 84 }),
+                  stat({ label: text("Total value"), value: "$1.2M" }),
+                  stat({ label: text("Avg. size"),   value: "$14 300" }),
+                ],
+              }),
+              tabs({ tabs: [text("All"), text("This month"), text("At risk")], active: 0 }),
+              table({
+                dataSource: dataSourceRef("deals"),
+                columns: [text("Deal"), text("Company"), text("Owner"), text("Value"), text("Stage")],
+              }),
+              pagination({ page: 1, pageSize: 20, total: 84 }),
+            ],
+          }),
+          right: stack({
+            direction: "vertical",
+            gap: 16,
+            children: [
+              card({
+                title: text("Deal info"),
+                content: stack({
+                  direction: "vertical",
+                  gap: 8,
+                  children: [
+                    avatar({ name: text("Acme Corp"), size: "md" }),
+                    stat({ label: text("Stage"), value: "Proposal" }),
+                    stat({ label: text("Value"), value: "$48 000" }),
+                    stat({ label: text("Owner"), value: "Sarah M." }),
+                    badge({ text: text("Hot") }),
+                    alert({ variant: "warning", text: text("No activity for 7 days") }),
+                  ],
+                }),
+              }),
+              card({
+                title: text("Next step"),
+                content: form({
+                  fields: [
+                    field({ key: "action",  component: "select",   label: text("Action"),
+                            options: [text("Send proposal"), text("Schedule call"), text("Follow up")] }),
+                    field({ key: "dueDate", component: "dateInput", label: text("Due date") }),
+                    field({ key: "note",    component: "textArea",  label: text("Note") }),
+                  ],
+                  actions: actionBar([
+                    button({ label: text("Save"), variant: "primary", action: actionRef("saveActivity") }),
+                    linkAction({ label: text("Skip"),                 action: actionRef("skip") }),
+                  ]),
+                }),
+              }),
+            ],
+          }),
         }),
       }),
     ],
