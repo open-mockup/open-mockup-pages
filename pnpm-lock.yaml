@@ -33,10 +33,10 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@openmockup/renderer-core':
-        specifier: https://registry.npmjs.org/@openmockup/renderer-core/-/renderer-core-0.1.2.tgz
+        specifier: 0.1.2
         version: 0.1.2
       '@openmockup/renderer-jsx':
-        specifier: https://registry.npmjs.org/@openmockup/renderer-jsx/-/renderer-jsx-0.1.2.tgz
+        specifier: 0.1.2
         version: 0.1.2
       '@tabler/icons-react':
         specifier: ^3.31.0
