@@ -14,8 +14,8 @@ import {
   table,
   text,
   tree,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Table ────────────────────────────────────────────────────────────────────
 
@@ -30,7 +30,7 @@ export const tableBasic: MockupDoc = dsl({
 });
 
 export const tableBasicCode = `\
-import { dataSourceRef, dsl, page, table, text } from "@open-mockup/dsl";
+import { dataSourceRef, dsl, page, table, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -55,7 +55,7 @@ export const listBasic: MockupDoc = dsl({
 });
 
 export const listBasicCode = `\
-import { dataSourceRef, dsl, list, page, text } from "@open-mockup/dsl";
+import { dataSourceRef, dsl, list, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -84,7 +84,7 @@ export const statGrid: MockupDoc = dsl({
 });
 
 export const statGridCode = `\
-import { dsl, grid, page, stat, text } from "@open-mockup/dsl";
+import { dsl, grid, page, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -112,7 +112,7 @@ export const treeBasic: MockupDoc = dsl({
 });
 
 export const treeBasicCode = `\
-import { dataSourceRef, dsl, page, text, tree } from "@open-mockup/dsl";
+import { dataSourceRef, dsl, page, text, tree } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -141,7 +141,7 @@ export const mediaPlaceholders: MockupDoc = dsl({
 });
 
 export const mediaPlaceholdersCode = `\
-import { avatar, chart, dsl, grid, image, map, page, text } from "@open-mockup/dsl";
+import { avatar, chart, dsl, grid, image, map, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -174,7 +174,7 @@ export const iconPlaceholderBasic: MockupDoc = dsl({
 });
 
 export const iconPlaceholderBasicCode = `\
-import { dsl, iconPlaceholder, page, stack, text } from "@open-mockup/dsl";
+import { dsl, iconPlaceholder, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

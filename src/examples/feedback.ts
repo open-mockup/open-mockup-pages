@@ -9,8 +9,8 @@ import {
   stack,
   text,
   tooltip,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Alert variants ───────────────────────────────────────────────────────────
 
@@ -31,7 +31,7 @@ export const alertVariants: MockupDoc = dsl({
 });
 
 export const alertVariantsCode = `\
-import { alert, dsl, page, stack, text } from "@open-mockup/dsl";
+import { alert, dsl, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -68,7 +68,7 @@ export const badgeBasic: MockupDoc = dsl({
 });
 
 export const badgeBasicCode = `\
-import { badge, dsl, page, stack, text } from "@open-mockup/dsl";
+import { badge, dsl, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -104,7 +104,7 @@ export const progressBasic: MockupDoc = dsl({
 });
 
 export const progressBasicCode = `\
-import { dsl, page, progress, stack, text } from "@open-mockup/dsl";
+import { dsl, page, progress, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -134,7 +134,7 @@ export const emptyStateBasic: MockupDoc = dsl({
 });
 
 export const emptyStateBasicCode = `\
-import { dsl, emptyState, page, text } from "@open-mockup/dsl";
+import { dsl, emptyState, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -158,7 +158,7 @@ export const loadingStateBasic: MockupDoc = dsl({
 });
 
 export const loadingStateBasicCode = `\
-import { dsl, loadingState, page, text } from "@open-mockup/dsl";
+import { dsl, loadingState, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -181,7 +181,7 @@ export const tooltipBasic: MockupDoc = dsl({
 });
 
 export const tooltipBasicCode = `\
-import { dsl, page, text, tooltip } from "@open-mockup/dsl";
+import { dsl, page, text, tooltip } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

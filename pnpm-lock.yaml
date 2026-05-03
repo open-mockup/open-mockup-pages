@@ -20,18 +20,21 @@ importers:
       '@monaco-editor/react':
         specifier: ^4.7.0
         version: 4.7.0(monaco-editor@0.52.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@open-mockup/dsl':
-        specifier: ^0.1.4
-        version: 0.1.4
-      '@open-mockup/flow':
-        specifier: ^0.1.4
-        version: 0.1.4
-      '@open-mockup/renderer-core':
-        specifier: ^0.1.4
-        version: 0.1.4
-      '@open-mockup/renderer-mantine':
-        specifier: ^0.1.4
-        version: 0.1.4(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@openmockup/dsl':
+        specifier: 0.1.2
+        version: 0.1.2
+      '@openmockup/flow':
+        specifier: 0.1.2
+        version: 0.1.2
+      '@openmockup/renderer-core':
+        specifier: 0.1.2
+        version: 0.1.2
+      '@openmockup/renderer-jsx':
+        specifier: 0.1.2
+        version: 0.1.2
+      '@openmockup/renderer-mantine':
+        specifier: 0.1.2
+        version: 0.1.2(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.41.1(react@18.3.1)
@@ -361,17 +364,20 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@open-mockup/dsl@0.1.4':
-    resolution: {integrity: sha512-k+6gtneSNaxRsx96FUf0Q73X1mmsZiRkb5U+I69ZpOaAzCSam0KvfyiIQps6jgTs9oTzrnZ2guyrEMhA4kidYw==}
+  '@openmockup/dsl@0.1.2':
+    resolution: {integrity: sha512-KeVz+n7GR0w167KuJI+iacBA86SHTRP8pms1U9/lgwrYFjGQ86W0n+hGzaN4ApRbTV/c02c/vB5ihd/dmAvWRg==}
 
-  '@open-mockup/flow@0.1.4':
-    resolution: {integrity: sha512-baYc9nV6Mmt+41QVO+U8KS8ew9IMwmSdiaXvYtJwMSnk/bZ1nW37Nkh34/OVwl9E14iAy+HnYe5ugnshDaExbw==}
+  '@openmockup/flow@0.1.2':
+    resolution: {integrity: sha512-hCAETCcLtjJGzDBdhFM5OubmcGTBCHTIQXvlnt9Wn7DThULvLxD8NPjdOvGvmjozFkOju2YY3gyUNYvRZe43aQ==}
 
-  '@open-mockup/renderer-core@0.1.4':
-    resolution: {integrity: sha512-/+TxhiLje6unVcZfNj+EGoTG75Rl0SbwbADaYJJsZF+2//gPE2/i2nncuIwCHMJ4XxvvawaJMABJEdO3f3LQ/g==}
+  '@openmockup/renderer-core@0.1.2':
+    resolution: {integrity: sha512-PmfIZqEo9MycyRH3lkT2AR54P2D/SjqViypf3JnZS79qFd8YKbatEQTTJHxPgkia2rTo/9Xtz9iQ9qO50biSpQ==}
 
-  '@open-mockup/renderer-mantine@0.1.4':
-    resolution: {integrity: sha512-8FDB0jzFIjMArPjEQT3ulBWN4E8LMKQsZ50MFMhH8YaQbolNeeCvDpILRLzJ7CrUCwgfWFJWy1nsZvT0EGl0vw==}
+  '@openmockup/renderer-jsx@0.1.2':
+    resolution: {integrity: sha512-LRoBaHqFM8TlY9CKzrDBTzrp3lt4jd/NwLQzJJ9hFUi06p49Y1ZVpuM8sbVdaI8XmbukGyCqPIdhovBTgyOpwg==}
+
+  '@openmockup/renderer-mantine@0.1.2':
+    resolution: {integrity: sha512-YcS8d1FY/SZgQQ2rgC+valVhBjwRtS96coavTnkP7Vl9DrnFx+wnc1MJ0eVFOkpqbFBeNhQe297MtyEx41QNnA==}
     peerDependencies:
       '@mantine/core': '>=7.0.0'
       react: '>=18.0.0'
@@ -1173,21 +1179,25 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@open-mockup/dsl@0.1.4': {}
+  '@openmockup/dsl@0.1.2': {}
 
-  '@open-mockup/flow@0.1.4':
+  '@openmockup/flow@0.1.2':
     dependencies:
-      '@open-mockup/dsl': 0.1.4
+      '@openmockup/dsl': 0.1.2
 
-  '@open-mockup/renderer-core@0.1.4':
+  '@openmockup/renderer-core@0.1.2':
     dependencies:
-      '@open-mockup/dsl': 0.1.4
+      '@openmockup/dsl': 0.1.2
 
-  '@open-mockup/renderer-mantine@0.1.4(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@openmockup/renderer-jsx@0.1.2':
+    dependencies:
+      '@openmockup/renderer-core': 0.1.2
+
+  '@openmockup/renderer-mantine@0.1.2(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@mantine/core': 7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@open-mockup/dsl': 0.1.4
-      '@open-mockup/renderer-core': 0.1.4
+      '@openmockup/dsl': 0.1.2
+      '@openmockup/renderer-core': 0.1.2
       react: 18.3.1
 
   '@rolldown/pluginutils@1.0.0-beta.27': {}

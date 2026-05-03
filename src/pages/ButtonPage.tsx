@@ -18,7 +18,7 @@ import {
   orderPageCode,
 } from "../examples/button.js";
 
-const importCode = `import { button, iconButton, segmentedButton, segmentedItem, actionBar, linkAction } from "@open-mockup/dsl";`;
+const importCode = `import { button, iconButton, segmentedButton, segmentedItem, actionBar, linkAction } from "@openmockup/dsl";`;
 
 const buttonProps: PropRow[] = [
   {

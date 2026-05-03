@@ -13,7 +13,7 @@ import {
   popoverBasicCode,
 } from "../examples/overlays.js";
 
-const importCode = `import { modal, drawer, popover } from "@open-mockup/dsl";`;
+const importCode = `import { modal, drawer, popover } from "@openmockup/dsl";`;
 
 const modalProps: PropRow[] = [
   { name: "title",   type: "TextValue",  required: true, description: "Modal header text." },

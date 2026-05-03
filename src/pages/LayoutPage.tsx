@@ -20,7 +20,7 @@ import {
   splitBasicCode,
 } from "../examples/layout.js";
 
-const importCode = `import { stack, grid, card, section, split } from "@open-mockup/dsl";`;
+const importCode = `import { stack, grid, card, section, split } from "@openmockup/dsl";`;
 
 const stackProps: PropRow[] = [
   { name: "direction", type: '"vertical" | "horizontal"', required: true, description: "Flow direction of children." },

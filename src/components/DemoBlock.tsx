@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Paper, Tabs, Text, useComputedColorScheme } from "@mantine/core";
 import { CodeHighlight } from "@mantine/code-highlight";
-import type { MockupDoc } from "@open-mockup/dsl";
-import { renderDsl } from "@open-mockup/renderer-mantine";
+import type { MockupDoc } from "@openmockup/dsl";
+import { mantineRenderer } from "@openmockup/renderer-mantine";
+import { render } from "@openmockup/renderer-core";
+import { jsxRenderer } from "@openmockup/renderer-jsx";
 
 interface DemoBlockProps {
   title?: string;
@@ -12,7 +14,7 @@ interface DemoBlockProps {
 }
 
 export function DemoBlock({ title, doc, code }: DemoBlockProps) {
-  const dslJson = JSON.stringify(doc, null, 2);
+  const openmockupSrc = render(doc, jsxRenderer);
   const isDark = useComputedColorScheme("light") === "dark";
 
   return (
@@ -39,7 +41,7 @@ export function DemoBlock({ title, doc, code }: DemoBlockProps) {
           >
             <Tabs.List style={{ border: "none" }}>
               <Tabs.Tab value="preview">Preview</Tabs.Tab>
-              <Tabs.Tab value="dsl">DSL JSON</Tabs.Tab>
+              <Tabs.Tab value="openmockup">.openmockup</Tabs.Tab>
               <Tabs.Tab value="code">Builder code</Tabs.Tab>
             </Tabs.List>
           </Box>
@@ -74,7 +76,7 @@ export function DemoBlock({ title, doc, code }: DemoBlockProps) {
               >
                 {(() => {
                   try {
-                    return renderDsl(doc);
+                    return render(doc, mantineRenderer);
                   } catch (err) {
                     const msg = err instanceof Error ? err.message : String(err);
                     return (
@@ -88,9 +90,9 @@ export function DemoBlock({ title, doc, code }: DemoBlockProps) {
             </Box>
           </Tabs.Panel>
 
-          {/* DSL JSON */}
-          <Tabs.Panel value="dsl">
-            <CodeHighlight code={dslJson} language="json" />
+          {/* OpenMockup JSX */}
+          <Tabs.Panel value="openmockup">
+            <CodeHighlight code={openmockupSrc} language="jsx" />
           </Tabs.Panel>
 
           {/* Builder code */}

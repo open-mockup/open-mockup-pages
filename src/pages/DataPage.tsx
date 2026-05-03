@@ -18,7 +18,7 @@ import {
   iconPlaceholderBasicCode,
 } from "../examples/data.js";
 
-const importCode = `import { table, list, stat, tree, image, iconPlaceholder, avatar, chart, map, dataSourceRef } from "@open-mockup/dsl";`;
+const importCode = `import { table, list, stat, tree, image, iconPlaceholder, avatar, chart, map, dataSourceRef } from "@openmockup/dsl";`;
 
 const tableProps: PropRow[] = [
   { name: "dataSource", type: "DataSourceRef", required: true, description: "Opaque reference to a host-registered data source." },

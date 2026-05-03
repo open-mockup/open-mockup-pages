@@ -12,8 +12,8 @@ import {
   stack,
   stat,
   text,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
 
@@ -38,7 +38,7 @@ export const modalBasic: MockupDoc = dsl({
 });
 
 export const modalBasicCode = `\
-import { actionBar, actionRef, button, dsl, modal, page, stack, stat, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, dsl, modal, page, stack, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -83,7 +83,7 @@ export const drawerRight: MockupDoc = dsl({
 });
 
 export const drawerRightCode = `\
-import { actionBar, actionRef, button, drawer, dsl, field, form, page, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, drawer, dsl, field, form, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -125,7 +125,7 @@ export const popoverBasic: MockupDoc = dsl({
 });
 
 export const popoverBasicCode = `\
-import { dsl, page, popover, stack, stat, text } from "@open-mockup/dsl";
+import { dsl, page, popover, stack, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

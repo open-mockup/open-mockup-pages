@@ -17,11 +17,12 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import Editor from "@monaco-editor/react";
 import { IconAlertCircle } from "@tabler/icons-react";
-import * as dslApi from "@open-mockup/dsl";
-import type { ActionRef } from "@open-mockup/dsl";
-import { renderDsl } from "@open-mockup/renderer-mantine";
-import * as flowApi from "@open-mockup/flow";
-import type { FlowDsl, FlowRuntimeState } from "@open-mockup/flow";
+import * as dslApi from "@openmockup/dsl";
+import type { ActionRef } from "@openmockup/dsl";
+import { mantineRenderer } from "@openmockup/renderer-mantine";
+import { render } from "@openmockup/renderer-core";
+import * as flowApi from "@openmockup/flow";
+import type { FlowDsl, FlowRuntimeState } from "@openmockup/flow";
 
 const initialFlowCode = `flow({
   initial: flowFormRef("inventory"),
@@ -356,7 +357,7 @@ export function FlowPage() {
 
               {baseForm !== null ? (
                 <Box p="lg" style={{ borderRadius: 8, backgroundColor: isDark ? "var(--mantine-color-dark-6)" : "var(--mantine-color-gray-0)" }}>
-                  {renderDsl(baseForm.doc, { onAction: (action) => trigger(action) })}
+                  {render(baseForm.doc, mantineRenderer)}
                 </Box>
               ) : (
                 <Text size="sm" c="dimmed">Flow is not parsed yet.</Text>
@@ -382,7 +383,7 @@ export function FlowPage() {
         title={modalForm?.doc.page.title}
         centered
       >
-        {modalForm !== null && renderDsl(modalForm.doc, { onAction: (action) => trigger(action) })}
+        {modalForm !== null && render(modalForm.doc, mantineRenderer)}
       </Modal>
     </Stack>
   );
