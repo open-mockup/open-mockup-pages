@@ -20,30 +20,22 @@ import { IconAlertCircle } from "@tabler/icons-react";
 import type { MockupDoc } from "@openmockup/dsl";
 import * as dslApi from "@openmockup/dsl";
 import { mantineRenderer } from "@openmockup/renderer-mantine";
+import { renderDsl } from "@openmockup/renderer-mantine";
 import { render } from "@openmockup/renderer-core";
+import { parseJsx } from "@openmockup/parser-jsx";
 import { useMediaQuery } from "@mantine/hooks";
 
-const initialDoc = {
-  version: "0.1",
-  page: {
-    title: "Playground form",
-    layout: {
-      type: "form",
-      fields: [
-        { key: "name", component: "textInput", label: "Full name", required: true, placeholder: "Jane Doe" },
-        { key: "role", component: "select", label: "Role", options: ["Viewer", "Editor", "Admin"] },
-        { key: "channels", component: "multiSelect", label: "Channels", options: ["Email", "SMS", "Telegram"] },
-      ],
-      actions: {
-        type: "actionBar",
-        items: [
-          { type: "button", label: "Save", variant: "primary", action: "save" },
-          { type: "button", label: "Cancel", variant: "secondary" },
-        ],
-      },
-    },
-  },
-};
+const initialJsxCode = `<Page title="Playground form">
+  <Form>
+    <Field key="name" component="textInput" label="Full name" required placeholder="Jane Doe" />
+    <Field key="role" component="select" label="Role" options={["Viewer", "Editor", "Admin"]} />
+    <Field key="channels" component="multiSelect" label="Channels" options={["Email", "SMS", "Telegram"]} />
+    <ActionBar>
+      <Button variant="primary" action="save">Save</Button>
+      <Button variant="secondary">Cancel</Button>
+    </ActionBar>
+  </Form>
+</Page>`;
 
 const initialTsCode = `dsl({
   page: page({
@@ -67,37 +59,37 @@ const componentGroups: Array<{ key: string; label: string; items: string[] }> = 
   {
     key: "layout",
     label: "Layout",
-    items: ["page", "section", "stack", "grid", "split", "card"],
+    items: ["Page", "Section", "Stack", "Grid", "Split", "Card"],
   },
   {
     key: "form",
     label: "Form",
-    items: ["form", "field", "textInput", "textArea", "select", "multiSelect", "checkbox", "radioGroup", "switch", "dateInput", "passwordInput", "searchInput", "numericInput"],
+    items: ["Form", "Field"],
   },
   {
     key: "actions",
     label: "Actions",
-    items: ["button", "iconButton", "segmentedButton", "segmentedItem", "linkAction", "actionBar"],
+    items: ["Button", "IconButton", "SegmentedButton", "SegmentedItem", "ActionBar"],
   },
   {
     key: "navigation",
     label: "Navigation",
-    items: ["tabs", "sidebarNav", "topNav", "navItem", "breadcrumb", "pagination", "menu", "menuItem", "contextMenu"],
+    items: ["Tabs", "SidebarNav", "TopNav", "NavItem", "Breadcrumb", "Pagination", "Menu", "MenuItem", "ContextMenu"],
   },
   {
     key: "data",
     label: "Data",
-    items: ["table", "list", "tree", "stat"],
+    items: ["Table", "List", "Tree", "Stat"],
   },
   {
     key: "feedback",
     label: "Feedback",
-    items: ["alert", "tooltip", "badge", "progress", "emptyState", "loadingState"],
+    items: ["Alert", "Tooltip", "Badge", "Progress", "EmptyState", "LoadingState"],
   },
   {
     key: "media",
     label: "Media",
-    items: ["image", "iconPlaceholder", "avatar", "chart", "map"],
+    items: ["Image", "IconPlaceholder", "Avatar", "Chart", "Map"],
   },
 ];
 
@@ -108,26 +100,20 @@ export function PlaygroundPage() {
   const [leftPaneWidth, setLeftPaneWidth] = useState(64);
   const [showCodePanel, setShowCodePanel] = useState(true);
   const completionRegistered = useRef(false);
-  const [editorMode, setEditorMode] = useState<"json" | "ts">("json");
-  const [code, setCode] = useState(() => JSON.stringify(initialDoc, null, 2));
+  const [editorMode, setEditorMode] = useState<"jsx" | "ts">("jsx");
+  const [jsxCode, setJsxCode] = useState(initialJsxCode);
   const [tsCode, setTsCode] = useState(initialTsCode);
   const [isDraggingSplit, setIsDraggingSplit] = useState(false);
 
-  const parsedJson = useMemo(() => {
+  const parsedJsx = useMemo(() => {
     try {
-      const raw = JSON.parse(code) as unknown;
-      if (!isDslLike(raw)) {
-        return {
-          doc: null,
-          error: "Expected root object with `version` and `page.layout`.",
-        };
-      }
-      return { doc: raw as MockupDoc, error: null };
+      const ir = parseJsx(jsxCode);
+      return { ir, error: null };
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Invalid JSON";
-      return { doc: null, error: message };
+      const message = error instanceof Error ? error.message : "Parse error";
+      return { ir: null, error: message };
     }
-  }, [code]);
+  }, [jsxCode]);
 
   const parsedTs = useMemo(() => {
     try {
@@ -145,21 +131,33 @@ export function PlaygroundPage() {
     }
   }, [tsCode]);
 
-  const source = editorMode === "ts" ? parsedTs : parsedJson;
-
   const preview = useMemo(() => {
-    if (source.doc === null) return null;
-    try {
-      return render(source.doc, mantineRenderer);
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Render error";
-      return (
-        <Alert variant="light" color="red" icon={<IconAlertCircle size={16} />}>
-          Failed to render DSL: {message}
-        </Alert>
-      );
+    if (editorMode === "jsx") {
+      if (parsedJsx.ir === null) return null;
+      try {
+        return renderDsl(parsedJsx.ir);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Render error";
+        return (
+          <Alert variant="light" color="red" icon={<IconAlertCircle size={16} />}>
+            Failed to render: {message}
+          </Alert>
+        );
+      }
+    } else {
+      if (parsedTs.doc === null) return null;
+      try {
+        return render(parsedTs.doc, mantineRenderer);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Render error";
+        return (
+          <Alert variant="light" color="red" icon={<IconAlertCircle size={16} />}>
+            Failed to render DSL: {message}
+          </Alert>
+        );
+      }
     }
-  }, [source.doc]);
+  }, [editorMode, parsedJsx.ir, parsedTs.doc]);
 
   const handleSplitDrag = useCallback((clientX: number) => {
     const host = splitRef.current;
@@ -193,15 +191,15 @@ export function PlaygroundPage() {
           Live DSL Editor
         </Title>
         <Text c="dimmed" size="lg">
-          Edit JSON or TypeScript on the left. Preview updates immediately on the right.
+          Edit .openmockup JSX or TypeScript on the left. Preview updates immediately on the right.
         </Text>
       </div>
 
       <Divider />
 
       <Group>
-        <Button variant="default" onClick={() => setCode(JSON.stringify(initialDoc, null, 2))}>
-          Reset sample
+        <Button variant="default" onClick={() => setJsxCode(initialJsxCode)}>
+          Reset JSX sample
         </Button>
         <Button variant="default" onClick={() => setTsCode(initialTsCode)}>
           Reset TS snippet
@@ -239,10 +237,10 @@ export function PlaygroundPage() {
                 <SegmentedControl
                   size="xs"
                   value={editorMode}
-                  onChange={(value) => setEditorMode(value as "json" | "ts")}
+                  onChange={(value) => setEditorMode(value as "jsx" | "ts")}
                   data={[
-                    { label: "JSON", value: "json" },
-                    { label: "TS", value: "ts" },
+                    { label: ".openmockup", value: "jsx" },
+                    { label: "Builder (TS)", value: "ts" },
                   ]}
                 />
               </Group>
@@ -261,7 +259,7 @@ export function PlaygroundPage() {
                           </Text>
                           <Box style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                             {group.items.map((item) => (
-                              <Code key={item}>{item}</Code>
+                              <Code key={item}>{editorMode === "jsx" ? `<${item}>` : item.charAt(0).toLowerCase() + item.slice(1)}</Code>
                             ))}
                           </Box>
                         </Box>
@@ -272,20 +270,17 @@ export function PlaygroundPage() {
               </Accordion>
 
               <Box style={{ flex: 1, minHeight: 0 }}>
-                {editorMode === "json" ? (
+                {editorMode === "jsx" ? (
                   <Editor
                     height="100%"
-                    defaultLanguage="json"
-                    value={code}
-                    onChange={(value) => setCode(value ?? "")}
+                    defaultLanguage="jsx"
+                    value={jsxCode}
+                    onChange={(value) => setJsxCode(value ?? "")}
                     theme={isDark ? "vs-dark" : "light"}
                     options={{
                       minimap: { enabled: false },
                       fontSize: 13,
                       tabSize: 2,
-                      quickSuggestions: true,
-                      wordBasedSuggestions: "off",
-                      suggestOnTriggerCharacters: true,
                       scrollBeyondLastLine: false,
                       automaticLayout: true,
                     }}
@@ -316,9 +311,9 @@ export function PlaygroundPage() {
                 )}
               </Box>
 
-              {editorMode === "json" && parsedJson.error !== null && (
+              {editorMode === "jsx" && parsedJsx.error !== null && (
                 <Alert variant="light" color="red" icon={<IconAlertCircle size={16} />}>
-                  {parsedJson.error}
+                  {parsedJsx.error}
                 </Alert>
               )}
               {editorMode === "ts" && parsedTs.error !== null && (
@@ -397,54 +392,16 @@ export function PlaygroundPage() {
 
 function registerDslCompletion(monaco: typeof import("monaco-editor")) {
   const functions = [
-    "dsl",
-    "page",
-    "section",
-    "stack",
-    "grid",
-    "split",
-    "card",
-    "form",
-    "field",
-    "table",
-    "list",
-    "tree",
-    "stat",
-    "tabs",
-    "sidebarNav",
-    "topNav",
-    "navItem",
-    "breadcrumb",
-    "pagination",
-    "menu",
-    "menuItem",
-    "contextMenu",
-    "button",
-    "iconButton",
-    "segmentedButton",
-    "segmentedItem",
-    "linkAction",
-    "actionBar",
-    "alert",
-    "tooltip",
-    "badge",
-    "progress",
-    "emptyState",
-    "loadingState",
-    "modal",
-    "drawer",
-    "popover",
-    "image",
-    "iconPlaceholder",
-    "avatar",
-    "chart",
-    "map",
-    "label",
-    "heading",
-    "paragraph",
-    "text",
-    "actionRef",
-    "dataSourceRef",
+    "dsl", "page", "section", "stack", "grid", "split", "card",
+    "form", "field",
+    "table", "list", "tree", "stat",
+    "tabs", "sidebarNav", "topNav", "navItem", "breadcrumb", "pagination",
+    "menu", "menuItem", "contextMenu",
+    "button", "iconButton", "segmentedButton", "segmentedItem", "linkAction", "actionBar",
+    "alert", "tooltip", "badge", "progress", "emptyState", "loadingState",
+    "modal", "drawer", "popover",
+    "image", "iconPlaceholder", "avatar", "chart", "map",
+    "label", "heading", "paragraph", "text", "actionRef", "dataSourceRef",
   ];
 
   monaco.languages.registerCompletionItemProvider("typescript", {

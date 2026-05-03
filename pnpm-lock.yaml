@@ -26,6 +26,9 @@ importers:
       '@openmockup/flow':
         specifier: 0.1.2
         version: 0.1.2
+      '@openmockup/parser-jsx':
+        specifier: 0.1.2
+        version: 0.1.2
       '@openmockup/renderer-core':
         specifier: 0.1.2
         version: 0.1.2
@@ -370,6 +373,9 @@ packages:
   '@openmockup/flow@0.1.2':
     resolution: {integrity: sha512-hCAETCcLtjJGzDBdhFM5OubmcGTBCHTIQXvlnt9Wn7DThULvLxD8NPjdOvGvmjozFkOju2YY3gyUNYvRZe43aQ==}
 
+  '@openmockup/parser-jsx@0.1.2':
+    resolution: {integrity: sha512-bXYZDOd12mrqtyhS9Azk+mYbfPiSxfNKO3qKlYHbeiKDh0gSOdTYHsrNxFKfe8emO8V0qrxnQQUi2VDsC6z+Cw==}
+
   '@openmockup/renderer-core@0.1.2':
     resolution: {integrity: sha512-PmfIZqEo9MycyRH3lkT2AR54P2D/SjqViypf3JnZS79qFd8YKbatEQTTJHxPgkia2rTo/9Xtz9iQ9qO50biSpQ==}
 
@@ -562,6 +568,16 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+
+  acorn-jsx@5.3.2:
+    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
+    peerDependencies:
+      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
+
+  acorn@8.16.0:
+    resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
 
   baseline-browser-mapping@2.10.23:
     resolution: {integrity: sha512-xwVXGqevyKPsiuQdLj+dZMVjidjJV508TBqexND5HrF89cGdCYCJFB3qhcxRHSeMctdCfbR1jrxBajhDy7o29g==}
@@ -1185,6 +1201,12 @@ snapshots:
     dependencies:
       '@openmockup/dsl': 0.1.2
 
+  '@openmockup/parser-jsx@0.1.2':
+    dependencies:
+      '@openmockup/renderer-core': 0.1.2
+      acorn: 8.16.0
+      acorn-jsx: 5.3.2(acorn@8.16.0)
+
   '@openmockup/renderer-core@0.1.2':
     dependencies:
       '@openmockup/dsl': 0.1.2
@@ -1329,6 +1351,12 @@ snapshots:
       vite: 5.4.21(sugarss@5.0.1(postcss@8.5.12))
     transitivePeerDependencies:
       - supports-color
+
+  acorn-jsx@5.3.2(acorn@8.16.0):
+    dependencies:
+      acorn: 8.16.0
+
+  acorn@8.16.0: {}
 
   baseline-browser-mapping@2.10.23: {}
 

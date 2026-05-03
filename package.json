@@ -16,6 +16,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@openmockup/dsl": "0.1.2",
     "@openmockup/flow": "0.1.2",
+    "@openmockup/parser-jsx": "0.1.2",
     "@openmockup/renderer-core": "0.1.2",
     "@openmockup/renderer-jsx": "0.1.2",
     "@openmockup/renderer-mantine": "0.1.2",
