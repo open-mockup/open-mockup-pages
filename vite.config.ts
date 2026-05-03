@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import postcssPresetMantine from "postcss-preset-mantine";
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? "/open-mockup-pages/" : "/",
+  base: process.env.GITHUB_ACTIONS ? "/openmockup-pages/" : "/",
   plugins: [react()],
   css: {
     postcss: {
