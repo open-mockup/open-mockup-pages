@@ -6,8 +6,8 @@ import {
   paragraph,
   stack,
   text,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Label ────────────────────────────────────────────────────────────────────
 
@@ -27,7 +27,7 @@ export const labelBasic: MockupDoc = dsl({
 });
 
 export const labelBasicCode = `\
-import { dsl, label, page, stack, text } from "@open-mockup/dsl";
+import { dsl, label, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -63,7 +63,7 @@ export const headingLevels: MockupDoc = dsl({
 });
 
 export const headingLevelsCode = `\
-import { dsl, heading, page, stack, text } from "@open-mockup/dsl";
+import { dsl, heading, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -103,7 +103,7 @@ export const paragraphBasic: MockupDoc = dsl({
 });
 
 export const paragraphBasicCode = `\
-import { dsl, heading, page, paragraph, stack, text } from "@open-mockup/dsl";
+import { dsl, heading, page, paragraph, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

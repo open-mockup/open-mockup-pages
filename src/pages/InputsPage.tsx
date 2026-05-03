@@ -12,7 +12,7 @@ import {
   numericExampleCode,
 } from "../examples/inputs.js";
 
-const importCode = `import { field, form } from "@open-mockup/dsl";
+const importCode = `import { field, form } from "@openmockup/dsl";
 // component values: "passwordInput" | "searchInput" | "numericInput"`;
 
 const fieldProps: PropRow[] = [

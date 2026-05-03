@@ -16,8 +16,8 @@ import {
   stack,
   stat,
   text,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Example 1: single button ────────────────────────────────────────────────
 
@@ -33,7 +33,7 @@ export const singleButton: MockupDoc = dsl({
 });
 
 export const singleButtonCode = `\
-import { button, dsl, page, text, actionRef } from "@open-mockup/dsl";
+import { button, dsl, page, text, actionRef } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -64,7 +64,7 @@ export const buttonVariants: MockupDoc = dsl({
 });
 
 export const buttonVariantsCode = `\
-import { button, dsl, page, stack, text } from "@open-mockup/dsl";
+import { button, dsl, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -95,7 +95,7 @@ export const buttonActionBar: MockupDoc = dsl({
 });
 
 export const buttonActionBarCode = `\
-import { actionBar, actionRef, button, dsl, linkAction, page, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, dsl, linkAction, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -122,7 +122,7 @@ export const iconButtonRow: MockupDoc = dsl({
 });
 
 export const iconButtonRowCode = `\
-import { actionBar, actionRef, button, dsl, iconButton, page, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, dsl, iconButton, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -152,7 +152,7 @@ export const segmentedModes: MockupDoc = dsl({
 });
 
 export const segmentedModesCode = `\
-import { dsl, page, segmentedButton, segmentedItem, text } from "@open-mockup/dsl";
+import { dsl, page, segmentedButton, segmentedItem, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -204,7 +204,7 @@ export const orderPageCode = `\
 import {
   actionBar, actionRef, alert, badge, button, card,
   dsl, linkAction, page, section, split, stack, stat, text,
-} from "@open-mockup/dsl";
+} from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

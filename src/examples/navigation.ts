@@ -11,8 +11,8 @@ import {
   tabs,
   text,
   topNav,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
 
@@ -27,7 +27,7 @@ export const tabsBasic: MockupDoc = dsl({
 });
 
 export const tabsBasicCode = `\
-import { dsl, page, tabs, text } from "@open-mockup/dsl";
+import { dsl, page, tabs, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -51,7 +51,7 @@ export const breadcrumbBasic: MockupDoc = dsl({
 });
 
 export const breadcrumbBasicCode = `\
-import { breadcrumb, dsl, page, text } from "@open-mockup/dsl";
+import { breadcrumb, dsl, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -76,7 +76,7 @@ export const paginationBasic: MockupDoc = dsl({
 });
 
 export const paginationBasicCode = `\
-import { dsl, page, pagination, text } from "@open-mockup/dsl";
+import { dsl, page, pagination, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -108,7 +108,7 @@ export const sidebarNavBasic: MockupDoc = dsl({
 });
 
 export const sidebarNavBasicCode = `\
-import { dsl, navItem, page, sidebarNav, text } from "@open-mockup/dsl";
+import { dsl, navItem, page, sidebarNav, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -144,7 +144,7 @@ export const topNavBasic: MockupDoc = dsl({
 });
 
 export const topNavBasicCode = `\
-import { dsl, navItem, page, text, topNav } from "@open-mockup/dsl";
+import { dsl, navItem, page, text, topNav } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -177,7 +177,7 @@ export const menuBasic: MockupDoc = dsl({
 });
 
 export const menuBasicCode = `\
-import { dsl, menu, menuItem, page, text } from "@open-mockup/dsl";
+import { dsl, menu, menuItem, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -207,7 +207,7 @@ export const contextMenuBasic: MockupDoc = dsl({
 });
 
 export const contextMenuBasicCode = `\
-import { contextMenu, dsl, menuItem, page, text } from "@open-mockup/dsl";
+import { contextMenu, dsl, menuItem, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

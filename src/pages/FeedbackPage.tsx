@@ -18,7 +18,7 @@ import {
   tooltipBasicCode,
 } from "../examples/feedback.js";
 
-const importCode = `import { alert, tooltip, badge, progress, emptyState, loadingState } from "@open-mockup/dsl";`;
+const importCode = `import { alert, tooltip, badge, progress, emptyState, loadingState } from "@openmockup/dsl";`;
 
 const alertProps: PropRow[] = [
   { name: "variant", type: '"info" | "success" | "warning" | "error"', required: true, description: "Visual severity style." },

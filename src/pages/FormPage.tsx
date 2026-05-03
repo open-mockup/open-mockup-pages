@@ -10,7 +10,7 @@ import {
   formWithActionsCode,
 } from "../examples/form.js";
 
-const importCode = `import { form, field } from "@open-mockup/dsl";`;
+const importCode = `import { form, field } from "@openmockup/dsl";`;
 
 const formProps: PropRow[] = [
   { name: "fields",  type: "[FieldNode, ...]", required: true, description: "At least one field." },

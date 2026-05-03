@@ -36,8 +36,8 @@ import {
   tabs,
   text,
   topNav,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── 1. Одна кнопка ──────────────────────────────────────────────────────────
 
@@ -46,7 +46,7 @@ export const ex01: MockupDoc = dsl(
 );
 
 export const ex01Code = `\
-import { dsl, button, text, actionRef } from "@open-mockup/dsl";
+import { dsl, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   button({ label: text("Submit"), variant: "primary", action: actionRef("submit") })
@@ -63,7 +63,7 @@ export const ex02: MockupDoc = dsl(
 );
 
 export const ex02Code = `\
-import { dsl, actionBar, button, linkAction, text, actionRef } from "@open-mockup/dsl";
+import { dsl, actionBar, button, linkAction, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   actionBar([
@@ -90,7 +90,7 @@ export const ex03: MockupDoc = dsl(
 );
 
 export const ex03Code = `\
-import { dsl, form, field, actionBar, button, text, actionRef } from "@open-mockup/dsl";
+import { dsl, form, field, actionBar, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   form({
@@ -120,7 +120,7 @@ export const ex04: MockupDoc = dsl(
 );
 
 export const ex04Code = `\
-import { dsl, grid, stat, text } from "@open-mockup/dsl";
+import { dsl, grid, stat, text } from "@openmockup/dsl";
 
 export default dsl(
   grid({
@@ -146,7 +146,7 @@ export const ex05error: MockupDoc = dsl(
 );
 
 export const ex05Code = `\
-import { dsl, emptyState, loadingState, alert, text } from "@open-mockup/dsl";
+import { dsl, emptyState, loadingState, alert, text } from "@openmockup/dsl";
 
 export const empty = dsl(
   emptyState({ title: text("No results"), description: "Try adjusting your filters." })
@@ -185,7 +185,7 @@ export const ex06: MockupDoc = dsl(
 );
 
 export const ex06Code = `\
-import { dsl, stack, alert, form, field, actionBar, button, text, actionRef } from "@open-mockup/dsl";
+import { dsl, stack, alert, form, field, actionBar, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   stack({
@@ -244,7 +244,7 @@ export const ex07: MockupDoc = dsl(
 
 export const ex07Code = `\
 import { dsl, split, form, field, card, stack, stat, badge,
-         actionBar, button, text, actionRef } from "@open-mockup/dsl";
+         actionBar, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   split({
@@ -312,7 +312,7 @@ export const ex08: MockupDoc = dsl(
 );
 
 export const ex08Code = `\
-import { dsl, split, stack, card, stat, alert, table, dataSourceRef, text } from "@open-mockup/dsl";
+import { dsl, split, stack, card, stat, alert, table, dataSourceRef, text } from "@openmockup/dsl";
 
 export default dsl(
   split({
@@ -372,7 +372,7 @@ export const ex09: MockupDoc = dsl(
 
 export const ex09Code = `\
 import { dsl, stack, section, actionBar, button, iconButton, table,
-         pagination, dataSourceRef, text, actionRef } from "@open-mockup/dsl";
+         pagination, dataSourceRef, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   stack({
@@ -428,7 +428,7 @@ export const ex10: MockupDoc = dsl(
 );
 
 export const ex10Code = `\
-import { dsl, stack, grid, stat, chart, card, table, dataSourceRef, text } from "@open-mockup/dsl";
+import { dsl, stack, grid, stat, chart, card, table, dataSourceRef, text } from "@openmockup/dsl";
 
 export default dsl(
   stack({
@@ -494,7 +494,7 @@ export const ex11: MockupDoc = dsl(
 
 export const ex11Code = `\
 import { dsl, stack, tabs, card, table, form, field, actionBar, button,
-         dataSourceRef, text, actionRef } from "@open-mockup/dsl";
+         dataSourceRef, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   stack({
@@ -560,7 +560,7 @@ export const ex12: MockupDoc = dsl(
 
 export const ex12Code = `\
 import { dsl, split, sidebarNav, navItem, stack, section, table,
-         dataSourceRef, text } from "@open-mockup/dsl";
+         dataSourceRef, text } from "@openmockup/dsl";
 
 export default dsl(
   split({
@@ -619,7 +619,7 @@ export const ex13: MockupDoc = dsl(
 
 export const ex13Code = `\
 import { dsl, modal, stack, alert, form, field, actionBar, button,
-         linkAction, text, actionRef } from "@open-mockup/dsl";
+         linkAction, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   modal({
@@ -679,7 +679,7 @@ export const ex14: MockupDoc = dsl(
 
 export const ex14Code = `\
 import { dsl, stack, breadcrumb, progress, card, form, field,
-         actionBar, button, text, actionRef } from "@open-mockup/dsl";
+         actionBar, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   stack({
@@ -761,7 +761,7 @@ export const ex15: MockupDoc = dsl({
 export const ex15Code = `\
 import { dsl, stack, section, split, segmentedButton, segmentedItem,
          actionBar, button, form, field, table, pagination,
-         dataSourceRef, text, actionRef } from "@open-mockup/dsl";
+         dataSourceRef, text, actionRef } from "@openmockup/dsl";
 
 export default dsl({
   title: text("Orders"),
@@ -873,7 +873,7 @@ export const ex16: MockupDoc = dsl({
 export const ex16Code = `\
 import { dsl, stack, breadcrumb, split, section, stat, badge, alert,
          tabs, card, table, form, field, actionBar, button, linkAction,
-         dataSourceRef, text, actionRef } from "@open-mockup/dsl";
+         dataSourceRef, text, actionRef } from "@openmockup/dsl";
 
 export default dsl({
   title: text("Order #1042"),
@@ -992,7 +992,7 @@ export const ex17: MockupDoc = dsl({
 
 export const ex17Code = `\
 import { dsl, split, sidebarNav, navItem, stack, section, form, field,
-         actionBar, button, text, actionRef } from "@open-mockup/dsl";
+         actionBar, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl({
   title: text("Settings"),
@@ -1092,7 +1092,7 @@ export const ex18: MockupDoc = dsl({
 
 export const ex18Code = `\
 import { dsl, stack, topNav, navItem, grid, stat, split, card, chart,
-         table, dataSourceRef, text } from "@open-mockup/dsl";
+         table, dataSourceRef, text } from "@openmockup/dsl";
 
 export default dsl({
   title: text("Portal"),
@@ -1174,7 +1174,7 @@ export const ex19: MockupDoc = dsl(
 
 export const ex19Code = `\
 import { dsl, drawer, stack, section, stat, badge, alert, form, field,
-         actionBar, button, text, actionRef } from "@open-mockup/dsl";
+         actionBar, button, text, actionRef } from "@openmockup/dsl";
 
 export default dsl(
   drawer({
@@ -1316,7 +1316,7 @@ export const ex20: MockupDoc = dsl({
 export const ex20Code = `\
 import { dsl, stack, topNav, navItem, split, sidebarNav, section, grid,
          stat, tabs, table, pagination, card, avatar, badge, alert, form,
-         field, actionBar, button, linkAction, dataSourceRef, text, actionRef } from "@open-mockup/dsl";
+         field, actionBar, button, linkAction, dataSourceRef, text, actionRef } from "@openmockup/dsl";
 
 export default dsl({
   title: text("Deals — CRM"),

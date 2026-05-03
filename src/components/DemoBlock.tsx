@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Paper, Tabs, Text, useComputedColorScheme } from "@mantine/core";
 import { CodeHighlight } from "@mantine/code-highlight";
-import type { MockupDoc } from "@open-mockup/dsl";
-import { renderDsl } from "@open-mockup/renderer-mantine";
+import type { MockupDoc } from "@openmockup/dsl";
+import { mantineRenderer } from "@openmockup/renderer-mantine";
 import { render } from "@openmockup/renderer-core";
 import { jsxRenderer } from "@openmockup/renderer-jsx";
 
@@ -14,7 +14,7 @@ interface DemoBlockProps {
 }
 
 export function DemoBlock({ title, doc, code }: DemoBlockProps) {
-  const openmockupSrc = render(doc as never, jsxRenderer);
+  const openmockupSrc = render(doc, jsxRenderer);
   const isDark = useComputedColorScheme("light") === "dark";
 
   return (
@@ -76,7 +76,7 @@ export function DemoBlock({ title, doc, code }: DemoBlockProps) {
               >
                 {(() => {
                   try {
-                    return renderDsl(doc);
+                    return render(doc, mantineRenderer);
                   } catch (err) {
                     const msg = err instanceof Error ? err.message : String(err);
                     return (

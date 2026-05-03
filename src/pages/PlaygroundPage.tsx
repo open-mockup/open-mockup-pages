@@ -17,9 +17,10 @@ import {
 } from "@mantine/core";
 import Editor from "@monaco-editor/react";
 import { IconAlertCircle } from "@tabler/icons-react";
-import type { MockupDoc } from "@open-mockup/dsl";
-import * as dslApi from "@open-mockup/dsl";
-import { renderDsl } from "@open-mockup/renderer-mantine";
+import type { MockupDoc } from "@openmockup/dsl";
+import * as dslApi from "@openmockup/dsl";
+import { mantineRenderer } from "@openmockup/renderer-mantine";
+import { render } from "@openmockup/renderer-core";
 import { useMediaQuery } from "@mantine/hooks";
 
 const initialDoc = {
@@ -149,7 +150,7 @@ export function PlaygroundPage() {
   const preview = useMemo(() => {
     if (source.doc === null) return null;
     try {
-      return renderDsl(source.doc);
+      return render(source.doc, mantineRenderer);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Render error";
       return (

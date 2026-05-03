@@ -7,8 +7,8 @@ import {
   form,
   page,
   text,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Password ─────────────────────────────────────────────────────────────────
 
@@ -29,7 +29,7 @@ export const passwordExample: MockupDoc = dsl({
 });
 
 export const passwordExampleCode = `\
-import { actionBar, actionRef, button, dsl, field, form, page, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, dsl, field, form, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -61,7 +61,7 @@ export const searchExample: MockupDoc = dsl({
 });
 
 export const searchExampleCode = `\
-import { dsl, field, form, page, text } from "@open-mockup/dsl";
+import { dsl, field, form, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -93,7 +93,7 @@ export const numericExample: MockupDoc = dsl({
 });
 
 export const numericExampleCode = `\
-import { actionBar, actionRef, button, dsl, field, form, page, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, dsl, field, form, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

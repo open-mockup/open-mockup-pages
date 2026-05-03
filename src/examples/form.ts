@@ -8,8 +8,8 @@ import {
   linkAction,
   page,
   text,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── All field types ──────────────────────────────────────────────────────────
 
@@ -32,7 +32,7 @@ export const fieldTypes: MockupDoc = dsl({
 });
 
 export const fieldTypesCode = `\
-import { dsl, field, form, page, text } from "@open-mockup/dsl";
+import { dsl, field, form, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -73,7 +73,7 @@ export const formWithActions: MockupDoc = dsl({
 });
 
 export const formWithActionsCode = `\
-import { actionBar, actionRef, button, dsl, field, form, linkAction, page, text } from "@open-mockup/dsl";
+import { actionBar, actionRef, button, dsl, field, form, linkAction, page, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({

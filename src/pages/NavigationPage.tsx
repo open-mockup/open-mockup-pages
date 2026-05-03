@@ -20,7 +20,7 @@ import {
   contextMenuBasicCode,
 } from "../examples/navigation.js";
 
-const importCode = `import { tabs, breadcrumb, pagination, sidebarNav, topNav, menu, contextMenu, navItem, menuItem } from "@open-mockup/dsl";`;
+const importCode = `import { tabs, breadcrumb, pagination, sidebarNav, topNav, menu, contextMenu, navItem, menuItem } from "@openmockup/dsl";`;
 
 const tabsProps: PropRow[] = [
   { name: "tabs",   type: "[TextValue, ...]", required: true, description: "Tab labels (at least one)." },

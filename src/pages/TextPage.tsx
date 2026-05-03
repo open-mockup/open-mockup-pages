@@ -12,7 +12,7 @@ import {
   paragraphBasicCode,
 } from "../examples/text.js";
 
-const importCode = `import { label, heading, paragraph } from "@open-mockup/dsl";`;
+const importCode = `import { label, heading, paragraph } from "@openmockup/dsl";`;
 
 const labelProps: PropRow[] = [
   { name: "text", type: "TextValue", required: true, description: "Short inline text — non-empty." },

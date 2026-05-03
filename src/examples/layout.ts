@@ -12,8 +12,8 @@ import {
   stack,
   stat,
   text,
-} from "@open-mockup/dsl";
-import type { MockupDoc } from "@open-mockup/dsl";
+} from "@openmockup/dsl";
+import type { MockupDoc } from "@openmockup/dsl";
 
 // ─── Stack ────────────────────────────────────────────────────────────────────
 
@@ -33,7 +33,7 @@ export const stackVertical: MockupDoc = dsl({
 });
 
 export const stackVerticalCode = `\
-import { button, dsl, page, stack, text } from "@open-mockup/dsl";
+import { button, dsl, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -66,7 +66,7 @@ export const stackHorizontal: MockupDoc = dsl({
 });
 
 export const stackHorizontalCode = `\
-import { badge, dsl, page, stack, text } from "@open-mockup/dsl";
+import { badge, dsl, page, stack, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -101,7 +101,7 @@ export const gridTwoCols: MockupDoc = dsl({
 });
 
 export const gridTwoColsCode = `\
-import { dsl, grid, page, stat, text } from "@open-mockup/dsl";
+import { dsl, grid, page, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -133,7 +133,7 @@ export const gridThreeCols: MockupDoc = dsl({
 });
 
 export const gridThreeColsCode = `\
-import { dsl, grid, page, stat, text } from "@open-mockup/dsl";
+import { dsl, grid, page, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -170,7 +170,7 @@ export const cardBasic: MockupDoc = dsl({
 });
 
 export const cardBasicCode = `\
-import { badge, card, dsl, page, stack, stat, text } from "@open-mockup/dsl";
+import { badge, card, dsl, page, stack, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -211,7 +211,7 @@ export const sectionBasic: MockupDoc = dsl({
 });
 
 export const sectionBasicCode = `\
-import { dsl, page, section, stack, stat, text } from "@open-mockup/dsl";
+import { dsl, page, section, stack, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
@@ -261,7 +261,7 @@ export const splitBasic: MockupDoc = dsl({
 });
 
 export const splitBasicCode = `\
-import { badge, dataSourceRef, dsl, list, page, section, split, stack, stat, text } from "@open-mockup/dsl";
+import { badge, dataSourceRef, dsl, list, page, section, split, stack, stat, text } from "@openmockup/dsl";
 
 const doc = dsl({
   page: page({
