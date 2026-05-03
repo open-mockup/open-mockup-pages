@@ -32,15 +32,12 @@ importers:
       '@open-mockup/renderer-mantine':
         specifier: ^0.1.4
         version: 0.1.4(@mantine/core@7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@openmockup/parser-jsx':
-        specifier: file:vendor/parser-jsx.tgz
-        version: file:vendor/parser-jsx.tgz
       '@openmockup/renderer-core':
-        specifier: file:vendor/renderer-core.tgz
-        version: file:vendor/renderer-core.tgz
+        specifier: https://registry.npmjs.org/@openmockup/renderer-core/-/renderer-core-0.1.2.tgz
+        version: 0.1.2
       '@openmockup/renderer-jsx':
-        specifier: file:vendor/renderer-jsx.tgz
-        version: file:vendor/renderer-jsx.tgz
+        specifier: https://registry.npmjs.org/@openmockup/renderer-jsx/-/renderer-jsx-0.1.2.tgz
+        version: 0.1.2
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.41.1(react@18.3.1)
@@ -388,20 +385,11 @@ packages:
   '@openmockup/dsl@0.1.2':
     resolution: {integrity: sha512-KeVz+n7GR0w167KuJI+iacBA86SHTRP8pms1U9/lgwrYFjGQ86W0n+hGzaN4ApRbTV/c02c/vB5ihd/dmAvWRg==}
 
-  '@openmockup/parser-jsx@file:vendor/parser-jsx.tgz':
-    resolution: {integrity: sha512-bXYZDOd12mrqtyhS9Azk+mYbfPiSxfNKO3qKlYHbeiKDh0gSOdTYHsrNxFKfe8emO8V0qrxnQQUi2VDsC6z+Cw==, tarball: file:vendor/parser-jsx.tgz}
-    version: 0.1.2
-
   '@openmockup/renderer-core@0.1.2':
     resolution: {integrity: sha512-PmfIZqEo9MycyRH3lkT2AR54P2D/SjqViypf3JnZS79qFd8YKbatEQTTJHxPgkia2rTo/9Xtz9iQ9qO50biSpQ==}
 
-  '@openmockup/renderer-core@file:vendor/renderer-core.tgz':
-    resolution: {integrity: sha512-PmfIZqEo9MycyRH3lkT2AR54P2D/SjqViypf3JnZS79qFd8YKbatEQTTJHxPgkia2rTo/9Xtz9iQ9qO50biSpQ==, tarball: file:vendor/renderer-core.tgz}
-    version: 0.1.2
-
-  '@openmockup/renderer-jsx@file:vendor/renderer-jsx.tgz':
-    resolution: {integrity: sha512-LRoBaHqFM8TlY9CKzrDBTzrp3lt4jd/NwLQzJJ9hFUi06p49Y1ZVpuM8sbVdaI8XmbukGyCqPIdhovBTgyOpwg==, tarball: file:vendor/renderer-jsx.tgz}
-    version: 0.1.2
+  '@openmockup/renderer-jsx@0.1.2':
+    resolution: {integrity: sha512-LRoBaHqFM8TlY9CKzrDBTzrp3lt4jd/NwLQzJJ9hFUi06p49Y1ZVpuM8sbVdaI8XmbukGyCqPIdhovBTgyOpwg==}
 
   '@rolldown/pluginutils@1.0.0-beta.27':
     resolution: {integrity: sha512-+d0F4MKMCbeVUJwG96uQ4SgAznZNSq93I3V+9NHA4OpvqG8mRCpGdKmK8l/dl02h2CCDHwW2FqilnTyDcAnqjA==}
@@ -583,16 +571,6 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-
-  acorn-jsx@5.3.2:
-    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
-    peerDependencies:
-      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
-
-  acorn@8.16.0:
-    resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
 
   baseline-browser-mapping@2.10.23:
     resolution: {integrity: sha512-xwVXGqevyKPsiuQdLj+dZMVjidjJV508TBqexND5HrF89cGdCYCJFB3qhcxRHSeMctdCfbR1jrxBajhDy7o29g==}
@@ -1229,21 +1207,11 @@ snapshots:
 
   '@openmockup/dsl@0.1.2': {}
 
-  '@openmockup/parser-jsx@file:vendor/parser-jsx.tgz':
-    dependencies:
-      '@openmockup/renderer-core': 0.1.2
-      acorn: 8.16.0
-      acorn-jsx: 5.3.2(acorn@8.16.0)
-
   '@openmockup/renderer-core@0.1.2':
     dependencies:
       '@openmockup/dsl': 0.1.2
 
-  '@openmockup/renderer-core@file:vendor/renderer-core.tgz':
-    dependencies:
-      '@openmockup/dsl': 0.1.2
-
-  '@openmockup/renderer-jsx@file:vendor/renderer-jsx.tgz':
+  '@openmockup/renderer-jsx@0.1.2':
     dependencies:
       '@openmockup/renderer-core': 0.1.2
 
@@ -1376,12 +1344,6 @@ snapshots:
       vite: 5.4.21(sugarss@5.0.1(postcss@8.5.12))
     transitivePeerDependencies:
       - supports-color
-
-  acorn-jsx@5.3.2(acorn@8.16.0):
-    dependencies:
-      acorn: 8.16.0
-
-  acorn@8.16.0: {}
 
   baseline-browser-mapping@2.10.23: {}
 
